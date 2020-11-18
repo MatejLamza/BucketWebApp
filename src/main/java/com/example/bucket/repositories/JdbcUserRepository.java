@@ -15,7 +15,7 @@ import java.util.Set;
 @Repository
 public class JdbcUserRepository implements UserRepository {
 
-    private static final String TABLE_NAME = "user";
+    private static final String TABLE_NAME = "user_names";
     private static final String GENERATED_KEY_COLUMN = "id";
     private static final String SELECT_ALL = "SELECT id, name, email, uaci, ects_points FROM student";
 

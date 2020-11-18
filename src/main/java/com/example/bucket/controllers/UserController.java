@@ -1,6 +1,7 @@
 package com.example.bucket.controllers;
 
 import com.example.bucket.domain.User;
+import com.example.bucket.repositories.UserRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
@@ -12,13 +13,13 @@ import javax.validation.Valid;
 
 @Controller
 @RequestMapping("user")
-public class LoginController {
+public class UserController {
 
- /*   private final UserRepository userRepository;
+    private final UserRepository userRepository;
 
-    public LoginController(UserRepository userRepository) {
+    public UserController(UserRepository userRepository) {
         this.userRepository = userRepository;
-    }*/
+    }
 
     @GetMapping("home")
     public String loginUser(Model model) {
@@ -34,7 +35,7 @@ public class LoginController {
         if (errors.hasErrors()) {
             return "/user/home";
         }
-//        userRepository.insertUser(user);
+        userRepository.insertUser(user);
         return "/user/bucket-name";
     }
 }

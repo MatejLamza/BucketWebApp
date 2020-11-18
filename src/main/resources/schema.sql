@@ -1,19 +1,18 @@
-CREATE TABLE IF NOT EXISTS user_logins
+create table if not exists users
 (
     username varchar(20)  not null primary key,
     password varchar(100) not null,
     enabled  boolean      not null
 );
 
-CREATE TABLE IF NOT EXISTS auth
+create table if not exists authorities
 (
-    username varchar(20) not null,
-    role     varchar(20) not null,
-    constraint fk_authorities_users foreign key (username) references user_logins (username)
-
+    username  varchar(20) not null,
+    authority varchar(20) not null,
+    constraint fk_authorities_users foreign key (username) references users (username)
 );
 
-create table if not exists user
+create table if not exists user_names
 (
     id   identity,
     name varchar(100) not null
