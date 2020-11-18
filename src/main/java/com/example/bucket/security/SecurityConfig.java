@@ -36,12 +36,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .authorizeRequests()
                 .requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
-                .antMatchers("/user/login-user").anonymous()
+                .antMatchers("/login").anonymous()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
-                .loginPage("/user/login-user")
-                .defaultSuccessUrl("/login", true)
+                .loginPage("/login")
+                .defaultSuccessUrl("/user/home", true)
                 .and()
                 .logout()
                 .logoutSuccessUrl("/login?logout");

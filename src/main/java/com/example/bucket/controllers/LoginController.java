@@ -11,23 +11,23 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import javax.validation.Valid;
 
 @Controller
-@RequestMapping("login")
+@RequestMapping("user")
 public class LoginController {
 
-    @GetMapping
+    @GetMapping("home")
     public String loginUser(Model model) {
         model.addAttribute("user", new User());
-        return "login";
+        return "/user/home";
     }
 
     /**
      * Post mapping "process" gives alias to route that we can fetch in html using thymeleaf.
      */
-    @PostMapping
+    @PostMapping("temp")
     public String loginUserProcessed(@Valid User user, Errors errors) {
         if (errors.hasErrors()) {
-            return "login";
+            return "/user/home";
         }
-        return "login-processed";
+        return "/user/bucket-name";
     }
 }

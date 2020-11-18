@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org"
-      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+>
 
 <body>
 
@@ -16,10 +16,7 @@
 <div th:fragment="header" id="logo-title">
     <img th:src="@{/images/bucketListLogo.png}"/>
     <h1>Bucket App</h1>
-    <form method="post" th:action="@{/logout}">
-        You are logged in as <span sec:authentication="name"></span>
-        <input type="submit" value="Logout" class="btn btn-danger"/>
-    </form>
+
 </div>
 
 <div th:fragment="js">

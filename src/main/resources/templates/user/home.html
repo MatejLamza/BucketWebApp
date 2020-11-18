@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: head"></head>
+<body>
+<div>
+    <div th:replace="fragments :: header"></div>
+    <form method="post" th:object="${user}" th:action="@{/user/temp}">
+        <label for="name">Your bucket name: </label>
+        <input id="name" type="text" th:field="*{name}">
+        <span class="validation-error"
+              th:if="${#fields.hasErrors('name')}"
+              th:errors="*{name}"></span>
+        <input type="submit" value="Enter">
+    </form>
+</div>
+</body>
+</html>

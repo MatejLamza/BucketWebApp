@@ -6,7 +6,8 @@
 </head>
 <body>
 <div>
-   You entered your bucket name: <span th:text="${user.name}"/>
+    <div th:replace="fragments :: header"></div>
+    You entered your bucket name: <span th:text="${user.name}"/>
 </div>
 </body>
 </html>
