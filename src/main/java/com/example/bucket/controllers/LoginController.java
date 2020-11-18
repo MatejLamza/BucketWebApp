@@ -14,6 +14,12 @@ import javax.validation.Valid;
 @RequestMapping("user")
 public class LoginController {
 
+ /*   private final UserRepository userRepository;
+
+    public LoginController(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }*/
+
     @GetMapping("home")
     public String loginUser(Model model) {
         model.addAttribute("user", new User());
@@ -28,6 +34,7 @@ public class LoginController {
         if (errors.hasErrors()) {
             return "/user/home";
         }
+//        userRepository.insertUser(user);
         return "/user/bucket-name";
     }
 }

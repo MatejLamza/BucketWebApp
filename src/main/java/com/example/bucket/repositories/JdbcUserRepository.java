@@ -3,6 +3,7 @@ package com.example.bucket.repositories;
 import com.example.bucket.domain.User;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
+import org.springframework.stereotype.Repository;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -11,6 +12,7 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
 
+@Repository
 public class JdbcUserRepository implements UserRepository {
 
     private static final String TABLE_NAME = "user";
