@@ -36,6 +36,6 @@ public class UserController {
             return "/user/home";
         }
         userRepository.insertUser(user);
-        return "/user/bucket-name";
+        return "/category/categories";
     }
 }
